@@ -1,0 +1,18 @@
+apiVersion: v2
+name: demo
+description: A Helm chart for Kubernetes
+version: 0.1.0
+# Optional: Dependencies for this subchart
+dependencies:
+  - name: a
+    version: 1.0.0
+    repository: "file://../charts/a"
+    condition: b.enabled
+  - name: b
+    version: 1.0.0
+    repository: "file://../charts/b"
+    condition: b.enabled
+  - name: c
+    version: 1.0.0
+    repository: "file://../charts/c"
+    condition: c.enabled
